@@ -1,0 +1,5 @@
+python:
+  build: .
+  volumes:
+    - ../:/var/www/html
+  tty: true
