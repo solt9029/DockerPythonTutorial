@@ -14,25 +14,25 @@ gitとDocker for Windowsがインストールされていることが前提で�
 
 インストール済みだったら以下のコマンドをじゃんじゃん打ってみましょう
 
-```
+```bash
 git clone https://github.com/solt9029/DockerPythonTutorial 
 ```
 
 これでプログラムをダウンロードします
 
-```
+```bash
 cd DockerPythonTutorial
 ```
 
 これで今ダウンロードしたDockerPythonTutorialフォルダに移動します
 
-```
+```bash
 docker-compose up -d
 ```
 
 これでDockerを利用して仮想環境を作ります！簡単ですね
 
-```
+```bash
 docker ps
 ```
 
@@ -40,19 +40,19 @@ docker ps
 
 dockerpythontutorial_python_1とかいう名前のものがあるか確認してみてください
 
-```
+```bash
 docker exec -it dockerpythontutorial_python_1 bash
 ```
 
 これで仮想環境の中に入っちゃいます！
 
-```
+```bash
 cd /var/www/html
 ```
 
 仮想環境の中の/var/www/htmlフォルダに移動します
 
-```
+```bash
 ls
 ```
 
@@ -64,8 +64,22 @@ test.pyなどが入ってると思います
 
 だから、Windows上でDockerPythonTutorialフォルダに何かファイルを追加すれば、仮想環境の/var/www/htmlフォルダにも追加されるわけです！
 
-```
+```bash
 python test.py
 ```
 
 これでHello Worldが出力されればとりあえずOKです！
+
+# 補足説明
+
+今やった手順だと仮想環境の中にはpython3.5がインストールされています
+
+python2.7が欲しいぞい！とかいうときは、このフォルダの中にあるDockerfileを開いてみてください
+
+以下のような記述が見れると思います
+
+```docker
+FROM python:3.5
+```
+
+この3.5のところを2.7にかえちゃうだけです！簡単！
