@@ -1,5 +1,5 @@
 python:
   build: .
   volumes:
-    - ../:/var/www/html
+    - ./:/var/www/html
   tty: true
